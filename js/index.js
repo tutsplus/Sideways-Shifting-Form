@@ -26,8 +26,11 @@ $("body").on("keyup", "form", function(e){
 
 
 $("#next").on("click", function(e){
-  console.log(e.target);
-  nextSection();
+  if ($("#next").is(":visible") && $("fieldset.current").find("input, textarea").valid() ){
+      e.preventDefault();
+      nextSection();
+      return false;
+    }
 });
 
 
