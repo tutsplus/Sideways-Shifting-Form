@@ -35,7 +35,7 @@ $("#next").on("click", function(e){
 
 
 $("form").on("submit", function(e){
-  if ($("#next").is(":visible") || $("fieldset.current").index() < 3){
+  if ($("#next").is(":visible") || $("fieldset.current").index() < 3 || !$("fieldset.current").find("input, textarea").valid()){
     e.preventDefault();
     return false;
   }
